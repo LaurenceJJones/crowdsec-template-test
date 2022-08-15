@@ -1,8 +1,8 @@
 <template>
     <div class="flex flex-col h-full">
         <editor-content :editor="editor" />
-        <div class="w-screen overflow-y-scroll flex-1">
-            <pre><code>{{ dataView }}</code></pre>
+        <div class="w-screen overflow-y-scroll flex-1 overflow-x-wrap">
+            <code class="whitespace-pre-line">{{ dataView }}</code>
         </div>
     </div>
 </template>
