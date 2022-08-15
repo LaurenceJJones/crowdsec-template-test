@@ -13,7 +13,7 @@ import (
 
 var (
 	sprigFuncs            template.FuncMap
-	blacklistedSprigFuncs = []string{"env", "expandenv"}
+	blacklistedSprigFuncs = []string{"env", "expandenv", "getHostByName", "randBytes", "buildCustomCert", "genCa", "genPrivateKey", "genCAWithKey", "genSelfSignedCert", "genSelfSignedCertWithKey", "genSignedCert", "genSignedCertWithKey"}
 )
 
 type FormatRequest struct {
