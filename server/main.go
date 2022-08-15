@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 	"strings"
@@ -20,19 +21,34 @@ type FormatRequest struct {
 	Alerts       []models.Alert `json:"alerts"`
 }
 
-func format(c *gin.Context) {
-	var Request FormatRequest
-	if err := c.ShouldBindJSON(&Request); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+func handleError(c *gin.Context) {
+	c.Next()
+	e := c.Errors.Last()
+	if e == nil {
 		return
 	}
-	template, _ := template.New("").Funcs(sprigFuncs).Parse(Request.FormatString)
+	c.String(-1, fmt.Sprintf("Error: %s", e.Error()))
+}
+
+func format(c *gin.Context) {
+	var Request FormatRequest
+	if err := c.BindJSON(&Request); err != nil {
+		return
+	}
+	template, err := template.New("").Funcs(sprigFuncs).Parse(Request.FormatString)
+	if err != nil {
+		c.AbortWithError(400, err)
+		return
+	}
 	b := new(strings.Builder)
-	template.Execute(b, Request.Alerts)
+	if err = template.Execute(b, Request.Alerts); err != nil {
+		c.AbortWithError(400, err)
+		return
+	}
 	c.String(http.StatusOK, b.String())
 }
 
-func scaffoldSpringFuncs() {
+func scaffoldSprigFuncs() {
 	bsf := sprig.TxtFuncMap()
 	for _, v := range blacklistedSprigFuncs {
 		delete(bsf, v)
@@ -42,7 +58,9 @@ func scaffoldSpringFuncs() {
 
 func main() {
 	r := gin.Default()
-	scaffoldSpringFuncs()
+	r.SetTrustedProxies([]string{"127.0.0.1"})
+	scaffoldSprigFuncs()
+	r.Use(handleError)
 	api := r.Group("/api")
 	{
 		v1 := api.Group("/v1")
