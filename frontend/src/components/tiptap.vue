@@ -1,6 +1,10 @@
 <template>
-    <editor-content :editor="editor" />
-    <pre><code>{{ dataView }}</code></pre>
+    <div class="flex flex-col h-full">
+        <editor-content :editor="editor" />
+        <div class="w-screen overflow-y-scroll flex-1">
+            <pre><code>{{ dataView }}</code></pre>
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -20,7 +24,9 @@
     const fetchFormat = async () => {
         const res = await fetch("/api/v1/format", {
             body: JSON.stringify({
-                "formatString": editor.value.getText(),
+                "formatString": editor.value.getText({
+                    blockSeparator: "\n"
+                }),
                 "alerts": jsonData
             }),
             headers: {
@@ -48,7 +54,7 @@
         ],
         editorProps: {
             attributes: {
-                class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl m-3 outline outline-offset-2 outline-blue-300',
+                class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl p-3 outline-dashed outline-1 flex-none max-h-48 overflow-y-scroll',
             },
         },
     })
