@@ -1,0 +1,697 @@
+<template>
+    <editor-content :editor="editor" />
+    <div v-html="dataView" />
+</template>
+
+<script setup>
+    import {
+        ref
+    } from 'vue'
+    import {
+        useEditor,
+        EditorContent
+    } from '@tiptap/vue-3'
+    import {
+        Extension
+    } from '@tiptap/core'
+    import StarterKit from '@tiptap/starter-kit'
+    let dataView = ref("")
+    const CustomExtension = Extension.create({
+        name: "crowdsec",
+
+        addKeyboardShortcuts() {
+            return {
+                "Control-k": async () => {
+                    const { data } = await fetch("/api/v1/format", {
+                        body: JSON.stringify({
+                            "formatString": editor.value,
+                            "alerts": [{
+                                "capacity": 10,
+                                "decisions": [{
+                                    "duration": "4h",
+                                    "origin": "crowdsec",
+                                    "scenario": "crowdsecurity/ssh-slow-bf",
+                                    "scope": "Ip",
+                                    "type": "ban",
+                                    "value": "34.80.236.245"
+                                }],
+                                "events": [{
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:03Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:03Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:04Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:04Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:06Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:06Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:07Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:07Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:09Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:09Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:10Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:10Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:12Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:12Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:13Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:13Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:15Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:15Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:16Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:16Z"
+                                    },
+                                    {
+                                        "meta": [{
+                                                "key": "ASNNumber",
+                                                "value": "396982"
+                                            },
+                                            {
+                                                "key": "ASNOrg",
+                                                "value": "GOOGLE-CLOUD-PLATFORM"
+                                            },
+                                            {
+                                                "key": "IsInEU",
+                                                "value": "false"
+                                            },
+                                            {
+                                                "key": "IsoCode",
+                                                "value": "TW"
+                                            },
+                                            {
+                                                "key": "SourceRange",
+                                                "value": "34.80.0.0/12"
+                                            },
+                                            {
+                                                "key": "datasource_path",
+                                                "value": "/var/log/auth.log"
+                                            },
+                                            {
+                                                "key": "datasource_type",
+                                                "value": "file"
+                                            },
+                                            {
+                                                "key": "log_type",
+                                                "value": "ssh_failed-auth"
+                                            },
+                                            {
+                                                "key": "machine",
+                                                "value": "ubuntu-s-1vcpu-1gb-lon1-01"
+                                            },
+                                            {
+                                                "key": "service",
+                                                "value": "ssh"
+                                            },
+                                            {
+                                                "key": "source_ip",
+                                                "value": "34.80.236.245"
+                                            },
+                                            {
+                                                "key": "target_user",
+                                                "value": "root"
+                                            },
+                                            {
+                                                "key": "timestamp",
+                                                "value": "2022-08-12T05:53:18Z"
+                                            }
+                                        ],
+                                        "timestamp": "2022-08-12T05:53:18Z"
+                                    }
+                                ],
+                                "events_count": 11,
+                                "labels": null,
+                                "leakspeed": "1m0s",
+                                "machine_id": "a8a65f16861f4a7aa8a8fb021078b753410kSgPCYoo5sucD",
+                                "message": "Ip 34.80.236.245 performed 'crowdsecurity/ssh-slow-bf' (11 events over 15.05162968s) at 2022-08-12 05:53:18.34281261 +0000 UTC",
+                                "remediation": true,
+                                "scenario": "crowdsecurity/ssh-slow-bf",
+                                "scenario_hash": "48665e6f7f4f0af7a47c7e81b0550c86f111e79c0a80d90290e560846beb4008",
+                                "scenario_version": "0.2",
+                                "simulated": false,
+                                "source": {
+                                    "as_name": "GOOGLE-CLOUD-PLATFORM",
+                                    "as_number": "396982",
+                                    "cn": "TW",
+                                    "ip": "34.80.236.245",
+                                    "latitude": 25.0504,
+                                    "longitude": 121.5324,
+                                    "range": "34.80.0.0/12",
+                                    "scope": "Ip",
+                                    "value": "34.80.236.245"
+                                },
+                                "start_at": "2022-08-12T05:53:03.291183769Z",
+                                "stop_at": "2022-08-12T05:53:18.342813449Z"
+                            }]
+                        }),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    })
+                    dataView.value = data
+                },
+            }
+        }
+    })
+
+    const editor = useEditor({
+        content: '{{range .}} {{. | toPrettyJson}} {{end}}',
+        extensions: [
+            StarterKit,
+            CustomExtension,
+        ],
+    })
+</script>
