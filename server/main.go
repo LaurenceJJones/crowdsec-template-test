@@ -58,7 +58,7 @@ func scaffoldSprigFuncs() {
 
 func main() {
 	r := gin.Default()
-	r.SetTrustedProxies([]string{"127.0.0.1"})
+	r.SetTrustedProxies([]string{"127.0.0.1", "172.17.0.1"})
 	scaffoldSprigFuncs()
 	r.Use(handleError)
 	api := r.Group("/api")
