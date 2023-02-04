@@ -3,10 +3,7 @@
 </template>
 
 <script setup>
-    import {
-        ref,
-        defineEmits,
-    } from 'vue'
+    import jsonData from '../assets/testData.json'
     import {
         useEditor,
         EditorContent,
@@ -23,10 +20,11 @@
         addKeyboardShortcuts() {
             return {
                 "Mod-Enter": () => {
-                    emit('fetchFormat', editor.value.getText({
-                        blockSeparator: "\n"
+                    emit('fetchFormat', JSON.stringify({
+                        "formatString" : editor.value.getText({ blockSeparator: "\n" }),
+                        "alerts": jsonData
                     }))
-                    return true
+                return true
                 }
             }
         }

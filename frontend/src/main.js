@@ -3,7 +3,11 @@ import './index.css'
 import App from './App.vue'
 import '/src/assets/wasm_exec.js'
 const go = new Go();
-WebAssembly.instantiateStreaming(fetch(import.meta.env.PROD ? '/assets/ctt.wasm' : '/src/assets/ctt.wasm'), go.importObject).then(result => {
-  go.run(result.instance);
-});
-createApp(App).mount('#app')
+const { instance } = await WebAssembly.instantiateStreaming(fetch(import.meta.env.PROD ? '/assets/ctt.wasm' : '/src/assets/ctt.wasm'), go.importObject)
+go.run(instance);
+createApp(App).use({
+  install(app) {
+    //Inject golang functions so we can inject later for ease
+    app.provide("formatWrapper", window.formatWrapper)
+  }
+}).mount('#app')
