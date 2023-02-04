@@ -1,5 +1,15 @@
 <template>
-    <editor-content :editor="editor" />
+    <div class="outline-dashed outline-1">
+        <editor-content :editor="editor" />
+        <div class="flex flex-row-reverse">
+            <button class="mx-2">
+                <font-awesome-icon icon="fa-solid fa-question" size="xl" />
+            </button>
+            <button class="mx-2">
+                <font-awesome-icon icon="fa-solid fa-gear" size="xl" />
+            </button>
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -37,7 +47,7 @@
         ],
         editorProps: {
             attributes: {
-                class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl p-3 outline-dashed outline-1 flex-none max-h-48 overflow-y-scroll',
+                class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl p-3 flex-none focus:outline-none max-h-48 overflow-y-scroll',
             },
         },
     })
