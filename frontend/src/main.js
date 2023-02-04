@@ -15,11 +15,12 @@ import { faGear, faQuestion } from '@fortawesome/free-solid-svg-icons'
 library.add(faGear, faQuestion)
 
 const go = new Go();
-const { instance } = await WebAssembly.instantiateStreaming(fetch(import.meta.env.PROD ? '/assets/ctt.wasm' : '/src/assets/ctt.wasm'), go.importObject)
-go.run(instance);
-createApp(App).use({
-  install(app) {
-    //Inject golang functions so we can inject later for ease
-    app.provide("formatWrapper", window.formatWrapper)
-  }
-}).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+WebAssembly.instantiateStreaming(fetch(import.meta.env.PROD ? '/assets/ctt.wasm' : '/src/assets/ctt.wasm'), go.importObject).then(({ instance }) => {
+  go.run(instance);
+  createApp(App).use({
+    install(app) {
+      //Inject golang functions so we can inject later for ease
+      app.provide("formatWrapper", window.formatWrapper)
+    }
+  }).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+})
