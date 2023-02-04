@@ -13,14 +13,14 @@
     } from '@tiptap/core'
     import StarterKit from '@tiptap/starter-kit'
 
-    const emit = defineEmits(['fetchFormat'])
+    const emit = defineEmits(['format'])
     const CustomExtension = Extension.create({
         name: "crowdsec",
 
         addKeyboardShortcuts() {
             return {
                 "Mod-Enter": () => {
-                    emit('fetchFormat', JSON.stringify({
+                    emit('format', JSON.stringify({
                         "formatString" : editor.value.getText({ blockSeparator: "\n" }),
                         "alerts": jsonData
                     }))
