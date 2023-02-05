@@ -28,13 +28,13 @@ defineProps({
     "title": String
 })
 const show = ref(true)
-const animationClasses = ref(['-translate-y-full', 'opacity-0'])
+const animationClasses = ref(['scale-50', 'opacity-0'])
 const toggleShow = (animation) => {
     if (animation) {
         show.value = !show.value
         setTimeout(() => animationClasses.value = [], 200) 
     } else {
-        animationClasses.value.push('-translate-y-full')
+        animationClasses.value.push('scale-50')
         setTimeout(() => animationClasses.value.push('opacity-0'), 100)
         setTimeout(() => show.value = !show.value, 300) 
     }
