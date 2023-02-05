@@ -9,10 +9,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faGear, faQuestion } from '@fortawesome/free-solid-svg-icons'
+import { faGear, faQuestion, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faGear, faQuestion)
+library.add(faGear, faQuestion, faXmark)
 
 const go = new Go();
 WebAssembly.instantiateStreaming(fetch(import.meta.env.PROD ? '/assets/ctt.wasm' : '/src/assets/ctt.wasm'), go.importObject).then(({ instance }) => {

@@ -2,18 +2,272 @@
     <div class="outline-dashed outline-1">
         <editor-content :editor="editor" />
         <div class="flex flex-row-reverse">
-            <button class="mx-2">
-                <font-awesome-icon icon="fa-solid fa-question" size="xl" />
-            </button>
-            <button class="mx-2">
-                <font-awesome-icon icon="fa-solid fa-gear" size="xl" />
-            </button>
+            <modal title="help">
+                <template #activator="{ on }">
+                    <button class="mx-2" @click="on(true)">
+                        <font-awesome-icon icon="fa-solid fa-question" size="xl" />
+                    </button>
+                </template>
+                <div>
+                    Help body
+                </div>
+            </modal>
+            <modal title="config">
+                <template #activator="{ on }">
+                    <button class="mx-2" @click="on(true)">
+                        <font-awesome-icon icon="fa-solid fa-gear" size="xl" />
+                    </button>
+                </template>
+                <div>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                    Config body<br/>
+                </div>
+            </modal>
         </div>
     </div>
 </template>
 
 <script setup>
     import jsonData from '../assets/testData.json'
+    import modal from './modal.vue'
     import {
         useEditor,
         EditorContent,
