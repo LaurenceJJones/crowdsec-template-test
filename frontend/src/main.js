@@ -21,7 +21,7 @@ WebAssembly.instantiateStreaming(fetch(import.meta.env.PROD ? '/assets/ctt.wasm'
     install(app) {
       //Inject golang functions so we can inject later for ease
       app.provide("formatWrapper", window.formatWrapper)
-      app.provide("notification", (t, opts = {}) => {
+      app.provide("notification", (message, opts = {}) => {
         const container = document.createElement('div')
         document.body.appendChild(container)
         let toastApp = createApp({
@@ -30,7 +30,7 @@ WebAssembly.instantiateStreaming(fetch(import.meta.env.PROD ? '/assets/ctt.wasm'
             class: "fixed bottom-0 right-0 m-4",
           }, [h("div", {
             class: `${opts.error ? `bg-red-500` : `bg-blue-500`} px-4 py-2 rounded-xl`
-          }, t)])
+          }, message)])
           }
         })
         toastApp.mount(container)
