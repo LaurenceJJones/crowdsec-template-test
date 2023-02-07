@@ -19,248 +19,12 @@
                     </button>
                 </template>
                 <div>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
-                    Config body<br/>
+                    Config body
                 </div>
             </modal>
+            <button class="mx-2" @click="copy">
+                <font-awesome-icon icon="fa-solid fa-clipboard" size="xl" />
+            </button>
         </div>
     </div>
 </template>
@@ -276,7 +40,8 @@
         Extension
     } from '@tiptap/core'
     import StarterKit from '@tiptap/starter-kit'
-
+    import { inject } from 'vue'
+    const setError = inject("setError")
     const emit = defineEmits(['format'])
     const CustomExtension = Extension.create({
         name: "crowdsec",
@@ -305,4 +70,11 @@
             },
         },
     })
+    const copy = () => {
+        try {
+            navigator.clipboard.writeText(editor.value.getText())
+        } catch (error) {
+            setError("Could not copy value to clipboard")
+        }
+    }
 </script>
