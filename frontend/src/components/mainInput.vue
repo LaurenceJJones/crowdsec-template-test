@@ -41,7 +41,7 @@
     } from '@tiptap/core'
     import StarterKit from '@tiptap/starter-kit'
     import { inject } from 'vue'
-    const setError = inject("setError")
+    const notification = inject("notification")
     const emit = defineEmits(['format'])
     const CustomExtension = Extension.create({
         name: "crowdsec",
@@ -73,8 +73,9 @@
     const copy = () => {
         try {
             navigator.clipboard.writeText(editor.value.getText())
+            notification("Copied to clipboard")
         } catch (error) {
-            setError("Could not copy value to clipboard")
+            notification("Could not copy value to clipboard", { error: true })
         }
     }
 </script>
