@@ -70,10 +70,10 @@
             },
         },
     })
-    const copy = () => {
+    const copy = (opts = {}) => {
         try {
-            navigator.clipboard.writeText(editor.value.getText())
-            notification("Copied to clipboard")
+            navigator.clipboard.writeText(editor.value.getText(opts))
+            notification("Copied to clipboard!")
         } catch (error) {
             notification("Could not copy value to clipboard", { error: true })
         }
