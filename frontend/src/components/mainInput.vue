@@ -69,7 +69,7 @@
                 loading()
                 loading = null
                 timeOut = null
-            }, 3000)
+            }, 1000)
         },
     })
     const editor = useEditor({
