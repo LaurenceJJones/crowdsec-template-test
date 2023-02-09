@@ -40,24 +40,37 @@
         Extension
     } from '@tiptap/core'
     import StarterKit from '@tiptap/starter-kit'
-    import { inject, ref } from 'vue'
+    import { inject, ref, h } from 'vue'
     const notification = inject("notification")
+    const format = inject("formatWrapper")
     const emit = defineEmits(['format'])
     const localJson = ref(defaultJson)
+    let timeOut = null
+    let loading = null
     const CustomExtension = Extension.create({
         name: "crowdsec",
-
-        addKeyboardShortcuts() {
-            return {
-                "Mod-Enter": () => {
-                    emit('format', JSON.stringify({
-                        "formatString" : editor.value.getText({ blockSeparator: "\n" }),
-                        "alerts": localJson.value
-                    }))
-                return true
-                }
+        onCreate: () => {
+            emit('format', format(JSON.stringify({ "formatString" : '{{range .}} {{. | toPrettyJson}} {{end}}', "alerts": localJson.value })))
+        },
+        onUpdate: () => {
+            if (!loading) {
+                loading = notification(h("div", ["Generating template", h("div", { class: "mx-4 inline-block w-4 h-4 border-t-8 border-t-white-500 rounded-full animate-spin"})]), {
+                    duration: 10000
+                })
             }
-        }
+            if (timeOut !== null){
+                clearTimeout(timeOut)
+            }
+            timeOut = setTimeout(() => {
+                emit('format', format(JSON.stringify({
+                    "formatString" : editor.value.getText({ blockSeparator: "\n" }),
+                    "alerts": localJson.value
+                })))
+                loading()
+                loading = null
+                timeOut = null
+            }, 3000)
+        },
     })
     const editor = useEditor({
         content: '{{range .}} {{. | toPrettyJson}} {{end}}',

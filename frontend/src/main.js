@@ -40,6 +40,7 @@ WebAssembly.instantiateStreaming(fetch(
       app.provide("notification", (message, opts = {}) => {
         const container = document.createElement('div')
         document.body.appendChild(container)
+        let timeOut = null
         let toastApp = createApp({
           render() {
             return h("div", {
@@ -50,11 +51,16 @@ WebAssembly.instantiateStreaming(fetch(
           }
         })
         toastApp.mount(container)
-        setTimeout(() => {
+        const remove = () => {
+          if (!toastApp)
+            return
+          clearTimeout(timeOut)
           toastApp.unmount()
           toastApp = undefined
           document.body.removeChild(container)
-        }, 3000)
+        }
+        timeOut = setTimeout(remove, opts.duration || 3000)
+        return remove
       })
     }
   }).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
