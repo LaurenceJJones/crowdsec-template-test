@@ -3,6 +3,7 @@ import {
   h
 } from 'vue'
 import './index.css'
+import 'simplebar/dist/simplebar.min.css';
 import App from './App.vue'
 import '/src/assets/wasm_exec.js'
 

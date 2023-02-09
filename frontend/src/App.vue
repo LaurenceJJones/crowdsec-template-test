@@ -1,5 +1,6 @@
 <script setup>
   import mainInput from './components/mainInput.vue'
+  import { SimpleBar } from 'simplebar-vue3';
   import {
     ref,
     inject,
@@ -9,12 +10,8 @@
 </script>
 
 <template>
-  <div class="h-screen">
-    <div class="flex flex-col">
-      <main-input @format="(t) => dataView = formatWrapper(t)" />
-      <div class="w-screen overflow-y-scroll flex-1 overflow-x-wrap">
-        <code class="whitespace-pre-line">{{ dataView }}</code>
-      </div>
-    </div>
-  </div>
+<main-input @format="(t) => dataView = formatWrapper(t)" />    
+<SimpleBar class="overflow-x-wrap h-5/6">
+  <code class="whitespace-pre-line">{{ dataView }}</code>
+</SimpleBar>
 </template>
