@@ -6,9 +6,9 @@
         <button class="mx-2" @click="copy">
             <font-awesome-icon icon="fa-solid fa-clipboard" size="xl" />
         </button>
-        <modal title="config">
+        <modal title="config" @close="emit('modal', false)">
             <template #activator="{ on }">
-                <button class="mx-2" @click="on(true)">
+                <button class="mx-2" @click="on(true);emit('modal', true)">
                     <font-awesome-icon icon="fa-solid fa-gear" size="xl" />
                 </button>
             </template>
@@ -16,9 +16,9 @@
                 
             </div>
         </modal>
-        <modal title="help">
+        <modal title="help" @close="emit('modal', false)">
             <template #activator="{ on }">
-                <button class="mx-2" @click="on(true)">
+                <button class="mx-2" @click="on(true);emit('modal', true)">
                     <font-awesome-icon icon="fa-solid fa-question" size="xl" />
                 </button>
             </template>
@@ -43,7 +43,7 @@
     import { inject, ref, h } from 'vue'
     const notification = inject("notification")
     const format = inject("formatWrapper")
-    const emit = defineEmits(['format'])
+    const emit = defineEmits(['format', 'modal'])
     const localJson = ref(defaultJson)
     let timeOut = null
     let loading = null
