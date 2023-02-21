@@ -6,13 +6,13 @@
 .prose::-webkit-scrollbar {
     display: none;
 }
-  
+
 /* Hide scrollbar for IE, Edge and Firefox */
 .prose {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
-    background: white
+    background: white;
 }
